@@ -7,7 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 import React, { useMemo, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import './CheckoutForm.css';
+
 
 const useOptions = () => {
   const options = useMemo(
@@ -32,29 +32,36 @@ const useOptions = () => {
   return options;
 };
 
-const CheckoutForm = ({ payment }) => {
+const CheckoutForm = ({ handlePayment }) => {
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
   const [paymentError, setPaymentError] = useState(null);
+  const [paymentSuccess, setPaymentSuccess] = useState(null);
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log("click me");
+      event.preventDefault();
+      console.log('click me')
 
     if (!stripe || !elements) {
+      // Stripe.js has not loaded yet. Make sure to disable
+      // form submission until Stripe.js has loaded.
       return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const {error,paymentMethod} = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardNumberElement),
     });
+    // console.log("[PaymentMethod]", payload);
     if (error) {
       setPaymentError(error.message);
+      setPaymentSuccess(null);
     } else {
-      setPaymentError(null);
-      payment(paymentMethod.id);
+      setPaymentSuccess(paymentMethod.id);
+        setPaymentError(null);
+        handlePayment(paymentMethod.id)
+        console.log(paymentMethod)
     }
   };
 
@@ -74,11 +81,10 @@ const CheckoutForm = ({ payment }) => {
             CVC
             <CardCvcElement options={options} />
           </label>
-          <button className="payment-btn" type="submit" disabled={!stripe}>
+          <button className='payment-btn' type="submit" disabled={!stripe}>
             Pay
           </button>
         </form>
-            {paymentError && <p style={{color:'red', marginTop:'20px'}}>{ paymentError}</p>}
       </Col>
     </Row>
   );

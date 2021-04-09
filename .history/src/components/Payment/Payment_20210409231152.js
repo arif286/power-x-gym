@@ -5,10 +5,10 @@ import CheckoutForm from "../CheckoutForm/CheckoutFrom";
 const stripePromise = loadStripe(
   "pk_test_51IeFj2EPnVwugJIPP9OtaSrwg0Xqlc1yvbLglcE8Rp38MVrRNWPwe0HdTJiOr9LmrRegBrj6JoSBAhXjmVYdNEcT00BZLKGVX7"
 );
-const Payment = ({ handlePayment }) => {
+const Payment = () => {
   return (
     <Elements stripe={stripePromise}>
-      <CheckoutForm payment={handlePayment} />
+      <CheckoutForm />
     </Elements>
   );
 };

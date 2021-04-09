@@ -38,6 +38,7 @@ const PurchaseForm = () => {
   const [order, setOrder] = useState(null);
 
   const onSubmit = (data,) => {
+    console.log(data);
     setStep(step + 1);
     setStepOver(true)
     setUserData(data)

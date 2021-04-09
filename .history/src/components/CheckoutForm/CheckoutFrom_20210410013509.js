@@ -37,12 +37,15 @@ const CheckoutForm = ({ payment }) => {
   const elements = useElements();
   const options = useOptions();
   const [paymentError, setPaymentError] = useState(null);
+  const [paymentSuccess, setPaymentSuccess] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("click me");
 
     if (!stripe || !elements) {
+      // Stripe.js has not loaded yet. Make sure to disable
+      // form submission until Stripe.js has loaded.
       return;
     }
 
@@ -50,11 +53,15 @@ const CheckoutForm = ({ payment }) => {
       type: "card",
       card: elements.getElement(CardNumberElement),
     });
+    // console.log("[PaymentMethod]", payload);
     if (error) {
       setPaymentError(error.message);
+      setPaymentSuccess(null);
     } else {
+      setPaymentSuccess(paymentMethod.id);
       setPaymentError(null);
       payment(paymentMethod.id);
+      console.log(paymentMethod);
     }
   };
 
@@ -78,7 +85,6 @@ const CheckoutForm = ({ payment }) => {
             Pay
           </button>
         </form>
-            {paymentError && <p style={{color:'red', marginTop:'20px'}}>{ paymentError}</p>}
       </Col>
     </Row>
   );

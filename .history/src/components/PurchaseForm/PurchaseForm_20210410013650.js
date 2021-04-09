@@ -3,12 +3,10 @@ import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider
 } from "@material-ui/pickers";
-import axios from "axios";
 import React, { useState } from "react";
-import { Alert, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Step, Stepper } from "react-form-stepper";
 import { useForm } from "react-hook-form";
-import confirmOrder from '../../power-x-gym/Image & Icon/confirm.svg';
 import Header from "../Header/Header";
 import Payment from "../Payment/Payment";
 import "./PurchaseForm.css";
@@ -37,24 +35,17 @@ const PurchaseForm = () => {
   const [step, setStep] = useState(0);
   const [order, setOrder] = useState(null);
 
-  const onSubmit = (data,) => {
+  const onSubmit = (data, e) => {
+    console.log(data);
     setStep(step + 1);
     setStepOver(true)
     setUserData(data)
+    // e.target.reset();
   };
 
-    const handlePayment = async(paymentId) => {
+    const handlePayment = (paymentId) => {
       console.log('click me')
       setOrder(paymentId);
-      setStep(step + 1);
-      const newOrder = { ...userData, birthDate: selectedDate, paymentId };
-      try {
-        const response = await
-          axios.post("http://localhost:5000/order", newOrder)
-        console.log(response.data)
-      } catch (error) {
-        console.log(error)
-      }
     }
 
   return (
@@ -191,11 +182,9 @@ const PurchaseForm = () => {
             )}
           </>
         ) : (
-          <Row className='justify-content-center mt-5'>
-              <Col xs={8}>
-                <Alert className='mb-4' variant='success'>Order Place Successfully</Alert>
-              <img style={{height:'300px'}} className='w-100' src={confirmOrder} alt=''/></Col>
-          </Row>
+          <div>
+            <h1>oder place successfully!</h1>
+          </div>
         )}
       </Container>
     </>

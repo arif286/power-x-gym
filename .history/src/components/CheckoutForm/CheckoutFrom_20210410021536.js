@@ -43,6 +43,8 @@ const CheckoutForm = ({ payment }) => {
     console.log("click me");
 
     if (!stripe || !elements) {
+      // Stripe.js has not loaded yet. Make sure to disable
+      // form submission until Stripe.js has loaded.
       return;
     }
 
@@ -55,6 +57,7 @@ const CheckoutForm = ({ payment }) => {
     } else {
       setPaymentError(null);
       payment(paymentMethod.id);
+      console.log(paymentMethod);
     }
   };
 
@@ -78,7 +81,7 @@ const CheckoutForm = ({ payment }) => {
             Pay
           </button>
         </form>
-            {paymentError && <p style={{color:'red', marginTop:'20px'}}>{ paymentError}</p>}
+            {paymentError && <p style={{color:'red', marginTop:'25px'}}>{ paymentError}</p>}
       </Col>
     </Row>
   );

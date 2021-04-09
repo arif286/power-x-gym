@@ -38,6 +38,7 @@ const PurchaseForm = () => {
   const [order, setOrder] = useState(null);
 
   const onSubmit = (data,) => {
+    console.log(data);
     setStep(step + 1);
     setStepOver(true)
     setUserData(data)
@@ -47,11 +48,11 @@ const PurchaseForm = () => {
       console.log('click me')
       setOrder(paymentId);
       setStep(step + 1);
-      const newOrder = { ...userData, birthDate: selectedDate, paymentId };
+      const newOrder = { ...userData, birthDate: selectedDate, ...order };
       try {
         const response = await
           axios.post("http://localhost:5000/order", newOrder)
-        console.log(response.data)
+        console.log(response)
       } catch (error) {
         console.log(error)
       }
