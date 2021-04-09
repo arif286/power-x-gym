@@ -1,0 +1,9 @@
+.header-link {
+  text-decoration: none !important;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+}
+.header-link:hover {
+  color: gray;
+}

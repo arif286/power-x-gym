@@ -1,0 +1,68 @@
+.advance-plan {
+  background-image: linear-gradient(#0708115e, #151626c4),
+    url("../../power-x-gym/Image & Icon/hipcravo-5UbIqV58CW8-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.basic-plan {
+  background-image: linear-gradient(#0708115e, #151626c4),
+    url("../../power-x-gym/Image & Icon/daniel-apodaca-WdoQio6HPVA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.beginner-plan {
+  background-image: linear-gradient(#0708115e, #151626c4),
+    url("../../power-x-gym/Image & Icon/penguinuhh-8VI6WwEEEHw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.price-card {
+  text-align: center;
+}
+.price-card p {
+  color: #fcd842;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.price-card h6 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+}
+.price-plan {
+  list-style: none;
+  margin-bottom: 25px;
+  text-align: center;
+  display: contents;
+}
+.price-plan li {
+  color: #868484;
+  font-size: 12px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.purchase-btn {
+  outline: none;
+  padding: 12px 10px;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  border: none;
+  background-color: #fcd842;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  margin: auto;
+  margin-bottom: 20px;
+}
+.price-plan span {
+  margin-right: 5px;
+}

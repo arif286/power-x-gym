@@ -1,0 +1,19 @@
+.advance-plan {
+  background-image: url("../../power-x-gym/Image & Icon/hipcravo-5UbIqV58CW8-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.basic-plan {
+  background-image: url("../../power-x-gym/Image & Icon/daniel-apodaca-WdoQio6HPVA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.beginner-plan {
+  background-image: url("../../power-x-gym/Image & Icon/penguinuhh-8VI6WwEEEHw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.advance-plan p {
+  color: #fcd842;
+}

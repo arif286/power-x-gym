@@ -1,0 +1,32 @@
+.header-link {
+  text-decoration: none !important;
+  color: white;
+  padding: 10px;
+}
+.header-link:hover {
+  color: gray;
+}
+.navBar-bg {
+  background-image: linear-gradient(#0708115e, #151626c4),
+    url("../../power-x-gym/Image & Icon/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg");
+  background-repeat: no-repeat;
+  min-height: 450px;
+  background-size: cover;
+}
+.header-content h2 {
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.header-content p {
+  color: #959393;
+  font-size: 14px;
+}
+.header-content button {
+  border: none;
+  outline: none;
+  background-color: #fcd842;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px 20px;
+}
