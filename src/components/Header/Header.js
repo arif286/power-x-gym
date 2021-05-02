@@ -77,9 +77,6 @@ const headerContent = (
             <NavLink className="header-link" to="/home">
               Home
             </NavLink>
-            <NavLink className="header-link" to="#features">
-              Service
-            </NavLink>
             <NavLink className="header-link" to="/classes">
               Our Classes
             </NavLink>
@@ -89,7 +86,7 @@ const headerContent = (
             <NavLink className="header-link" to="/pricing">
               Pricing
             </NavLink>
-            <NavLink className="header-link" to="/pricing">
+            <NavLink className="header-link" to="/contactUs">
               Contact Us
             </NavLink>
           </Nav>
