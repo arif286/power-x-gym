@@ -62,7 +62,7 @@ const headerContent = (
 
   return (
     <div className="navBar-bg mb-5">
-      <NavBar/>
+      {<NavBar/>}
       <Container>{header}</Container>
     </div>
   );
