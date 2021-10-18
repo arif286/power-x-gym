@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import gift from "../../power-x-gym/Image & Icon/gift-2.png";
-import body from "../../power-x-gym/Image & Icon/Group 87.png";
-import cycle from "../../power-x-gym/Image & Icon/Group 88.png";
+import gift from "../../assets/Image & Icon/gift-2.png";
+import body from "../../assets/Image & Icon/Group 87.png";
+import cycle from "../../assets/Image & Icon/Group 88.png";
 
 const ChooseUs = () => {
   return (

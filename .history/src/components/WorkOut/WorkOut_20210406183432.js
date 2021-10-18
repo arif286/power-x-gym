@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import watch from '../../power-x-gym/Image & Icon/Group 80.png';
-import dumble from '../../power-x-gym/Image & Icon/Group 81.png';
-import box from '../../power-x-gym/Image & Icon/Group 82.png';
+import watch from '../../assets/Image & Icon/Group 80.png';
+import dumble from '../../assets/Image & Icon/Group 81.png';
+import box from '../../assets/Image & Icon/Group 82.png';
 
 
 const WorkOut = () => {

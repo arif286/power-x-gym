@@ -1,24 +1,25 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useHistory } from "react-router";
 import Header from "../Header/Header";
 import './Classes.css';
-
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "400px",
+  },
+}));
 
 const Classes = () => {
+   const style = useStyles();
   const arrow = <FontAwesomeIcon icon={faArrowRight} />;
-
-  const [event, setEvent] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://power-x-gym-center.herokuapp.com/events")
-      .then((res) => setEvent(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
   const classDuration = {
     textTransform: "uppercase",
     marginTop: "auto",
@@ -37,34 +38,48 @@ const Classes = () => {
     showHeader: 'class',
     text: 'Our Classes'
   }
+  const [event, setEvent] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://power-x-gym-center.herokuapp.com/events")
+      .then((res) => setEvent(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <Header renderHeader={renderHeader} />
-      <Container>
-        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-          {event.map((item) => (
-            <Col className="pb-4" key={item.id}>
-              <Card
-                onClick={() => {
-                  handleClass(item._id);
-                }}
-                className="w-100 classes"
-                style={{
-                  backgroundImage: `url('${item.image}')`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                  minHeight: "400px",
-                }}
-              >
-                <h6 style={classDuration}>
-                  {item.title}
-                  <span style={{ marginLeft: "5px" }}>{arrow}</span>
-                </h6>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      {event.length === 0 ? (
+        <div className={style.root}>
+          <CircularProgress />
+        </div>
+      ) : (
+        <Container>
+          <Row className="row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            {event.map((item) => (
+              <Col className="pb-4" key={item.id}>
+                <Card
+                  onClick={() => {
+                    handleClass(item._id);
+                  }}
+                  className="w-100 classes"
+                  style={{
+                    backgroundImage: `url('${item.image}')`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    minHeight: "400px",
+                  }}
+                >
+                  <h6 style={classDuration}>
+                    {item.title}
+                    <span style={{ marginLeft: "5px" }}>{arrow}</span>
+                  </h6>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      )}
     </>
   );
 };

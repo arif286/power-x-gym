@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import Facebook from '../../power-x-gym/Image & Icon/bxl-facebook.png';
-import Instagram from '../../power-x-gym/Image & Icon/bxl-instagram.png';
-import Twitter from '../../power-x-gym/Image & Icon/bxl-twitter.png';
-import YouTube from '../../power-x-gym/Image & Icon/bxl-youtube.png';
+import Facebook from '../../assets/Image & Icon/bxl-facebook.png';
+import Instagram from '../../assets/Image & Icon/bxl-instagram.png';
+import Twitter from '../../assets/Image & Icon/bxl-twitter.png';
+import YouTube from '../../assets/Image & Icon/bxl-youtube.png';
 import './Footer.css';
 const Footer = () => {
   return (

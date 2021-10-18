@@ -1,14 +1,14 @@
 import DateFnsUtils from "@date-io/date-fns";
 import {
-  KeyboardDatePicker,
-  MuiPickersUtilsProvider
+    KeyboardDatePicker,
+    MuiPickersUtilsProvider
 } from "@material-ui/pickers";
 import axios from "axios";
 import React, { useState } from "react";
 import { Alert, Col, Container, Row } from "react-bootstrap";
 import { Step, Stepper } from "react-form-stepper";
 import { useForm } from "react-hook-form";
-import confirmOrder from '../../power-x-gym/Image & Icon/confirm.svg';
+import confirmOrder from '../../assets/Image & Icon/confirm.svg';
 import Header from "../Header/Header";
 import Payment from "../Payment/Payment";
 import "./PurchaseForm.css";

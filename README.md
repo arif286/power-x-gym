@@ -2,18 +2,18 @@
 
 <br />
 
-I'm [Ariful Islam](https://pogrammer-arif.web.app), a dedicated Full Stack web developer. And also a leaner in [Programming Hero](https://www.programming-hero.com/)
-. I build a [Power gym service](https://interior-design-service.web.app/) website.
+I'm [Ariful Islam](https://pogrammer-arif.web.app), a dedicated Full Stack JavaScript developer. Also I am a leaner of new technology
+. I build a [Power gym service](https://interior-design-service.web.app/) web Application. Where a customer can booking their Gym classes.
 
 ### About projects and features
 
-- This web site allows user to choose a gym class and get paid for their classes.
-- Integrate stripe payment method for payment option.
+- This Application allows user to choose a gym class and get paid for their classes.
+- Integrate stripe payment method for the payment option.
 - After payment, a user have access to their classes.
-- user information will be save in database.
-- a user can see their class schedule.
-- conditional rendering use in the User interface.
-- fully responsive for any devices.
+- All user information will be save in database.
+- A user can see their class schedule.
+- Conditional rendering use in the User interface.
+- Fully responsive for any devices.
 
 ## Projects tools.
 

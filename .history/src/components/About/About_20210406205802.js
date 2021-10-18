@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import aboutImg from "../../power-x-gym/Image & Icon/wells-chan-H-vAxuWxmi8-unsplash.jpg";
+import aboutImg from "../../assets/Image & Icon/wells-chan-H-vAxuWxmi8-unsplash.jpg";
 
 const About = () => {
   return (
